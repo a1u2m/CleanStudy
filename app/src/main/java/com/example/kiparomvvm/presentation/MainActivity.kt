@@ -1,10 +1,11 @@
-package com.example.kiparomvvm
+package com.example.kiparomvvm.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.example.kiparomvvm.R
 import com.example.kiparomvvm.domain.models.SaveUserNameParam
 import com.example.kiparomvvm.domain.usecase.GetUserNameUseCase
 import com.example.kiparomvvm.domain.usecase.SaveUserNameUseCase
