@@ -6,14 +6,28 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import com.example.kiparomvvm.R
+import com.example.kiparomvvm.data.repository.UserRepositoryImpl
 import com.example.kiparomvvm.domain.models.SaveUserNameParam
 import com.example.kiparomvvm.domain.usecase.GetUserNameUseCase
 import com.example.kiparomvvm.domain.usecase.SaveUserNameUseCase
 
 class MainActivity : AppCompatActivity() {
 
-    private val getUserNameUseCase = GetUserNameUseCase()
-    private val saveUserNameUseCase = SaveUserNameUseCase()
+    private val userRepositoryImpl by lazy(LazyThreadSafetyMode.NONE) {
+        UserRepositoryImpl(
+            applicationContext
+        )
+    }
+    private val getUserNameUseCase by lazy(LazyThreadSafetyMode.NONE) {
+        GetUserNameUseCase(
+            userRepositoryImpl
+        )
+    }
+    private val saveUserNameUseCase by lazy(LazyThreadSafetyMode.NONE) {
+        SaveUserNameUseCase(
+            userRepositoryImpl
+        )
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
