@@ -7,6 +7,8 @@ import android.widget.EditText
 import android.widget.TextView
 import com.example.kiparomvvm.R
 import com.example.kiparomvvm.data.repository.UserRepositoryImpl
+import com.example.kiparomvvm.data.storage.UserStorage
+import com.example.kiparomvvm.data.storage.sharefprefs.SharedPrefUserStorage
 import com.example.kiparomvvm.domain.models.SaveUserNameParam
 import com.example.kiparomvvm.domain.usecase.GetUserNameUseCase
 import com.example.kiparomvvm.domain.usecase.SaveUserNameUseCase
@@ -15,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     private val userRepositoryImpl by lazy(LazyThreadSafetyMode.NONE) {
         UserRepositoryImpl(
-            applicationContext
+            SharedPrefUserStorage(applicationContext)
         )
     }
     private val getUserNameUseCase by lazy(LazyThreadSafetyMode.NONE) {
