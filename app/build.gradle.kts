@@ -37,6 +37,11 @@ android {
 
 dependencies {
 
+    val lifecycleVersion = "2.7.0"
+
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion")
+
     implementation(project(":domain"))
     implementation(project(":data"))
 
