@@ -15,4 +15,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "KiparoMVVM"
 include(":app")
- 
+include(":data")
+include(":domain")

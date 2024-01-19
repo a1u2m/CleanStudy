@@ -7,7 +7,8 @@ import com.example.kiparomvvm.domain.models.UserName
 import com.example.kiparomvvm.domain.repository.UserRepository
 
 
-class UserRepositoryImpl(private val userStorage: UserStorage) : UserRepository {
+class UserRepositoryImpl(private val userStorage: UserStorage) :
+    UserRepository {
 
     override fun saveName(saveParam: SaveUserNameParam): Boolean {
         val user = mapToStorage(saveParam)
