@@ -32,8 +32,16 @@ android {
     }
 }
 
+tasks.withType<Test> {
+    useJUnitPlatform {
+        excludeTags("develop", "restdocs")
+    }
+}
+
 dependencies {
     implementation("javax.inject:javax.inject:1")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.2")
+    testImplementation("org.mockito:mockito-core:4.0.0")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:4.0.0")
 }
