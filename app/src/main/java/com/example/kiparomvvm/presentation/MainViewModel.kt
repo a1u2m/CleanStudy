@@ -1,10 +1,8 @@
 package com.example.kiparomvvm.presentation
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.kiparomvvm.common.TAG
 import com.example.kiparomvvm.domain.models.SaveUserNameParam
 import com.example.kiparomvvm.domain.usecase.GetUserNameUseCase
 import com.example.kiparomvvm.domain.usecase.SaveUserNameUseCase
@@ -17,15 +15,6 @@ class MainViewModel(
     private val _resultLive = MutableLiveData<String>()
     val resultLive
         get() = _resultLive as LiveData<String>
-
-    init {
-        Log.d(TAG, "vm created")
-    }
-
-    override fun onCleared() {
-        Log.d(TAG, "vm cleared")
-        super.onCleared()
-    }
 
     fun save(text: String) {
         val params = SaveUserNameParam(name = text)
