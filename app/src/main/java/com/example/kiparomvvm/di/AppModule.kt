@@ -15,13 +15,13 @@ class AppModule(private val context: Context) {
         return context
     }
 
-    @Provides
-    fun provideMainViewModelFactory(
-        getUserNameUseCase: GetUserNameUseCase,
-        saveUserNameUseCase: SaveUserNameUseCase
-    ): MainViewModelFactory {
-        return MainViewModelFactory(getUserNameUseCase, saveUserNameUseCase)
-    }
+//    @Provides
+//    fun provideMainViewModelFactory(
+//        getUserNameUseCase: GetUserNameUseCase,
+//        saveUserNameUseCase: SaveUserNameUseCase
+//    ): MainViewModelFactory {
+//        return MainViewModelFactory(getUserNameUseCase, saveUserNameUseCase)
+//    }
 
 
 }

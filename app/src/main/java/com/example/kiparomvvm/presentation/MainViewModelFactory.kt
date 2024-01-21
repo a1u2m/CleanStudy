@@ -4,8 +4,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.kiparomvvm.domain.usecase.GetUserNameUseCase
 import com.example.kiparomvvm.domain.usecase.SaveUserNameUseCase
+import javax.inject.Inject
 
-class MainViewModelFactory(
+class MainViewModelFactory @Inject constructor(
     private val getUserNameUseCase: GetUserNameUseCase,
     private val saveUserNameUseCase: SaveUserNameUseCase
 ) : ViewModelProvider.Factory {
