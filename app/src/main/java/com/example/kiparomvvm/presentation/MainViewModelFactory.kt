@@ -6,7 +6,7 @@ import com.example.kiparomvvm.domain.usecase.GetUserNameUseCase
 import com.example.kiparomvvm.domain.usecase.SaveUserNameUseCase
 import javax.inject.Inject
 
-class MainViewModelFactory @Inject constructor(
+class MainViewModelFactory (
     private val getUserNameUseCase: GetUserNameUseCase,
     private val saveUserNameUseCase: SaveUserNameUseCase
 ) : ViewModelProvider.Factory {

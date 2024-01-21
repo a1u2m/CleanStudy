@@ -4,7 +4,7 @@ import com.example.kiparomvvm.domain.models.SaveUserNameParam
 import com.example.kiparomvvm.domain.repository.UserRepository
 import javax.inject.Inject
 
-class SaveUserNameUseCase @Inject constructor(val userRepository: UserRepository) {
+class SaveUserNameUseCase (private val userRepository: UserRepository) {
 
     fun execute(param: SaveUserNameParam): Boolean {
         val oldUserName = userRepository.getName()
